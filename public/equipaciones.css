@@ -1,0 +1,493 @@
+/* =========================================
+   ESTILOS BASE Y HEADER FIJO
+========================================= */
+.main-header {
+    background-color: #040b18;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* =========================================
+   CARRUSEL HERO PREMIUM (ESTILO INICIO)
+========================================= */
+.equipaciones-carousel {
+    margin-top: 0; 
+    position: relative;
+    width: 100%;
+    height: 85vh; /* Altura brutal para que luzcan las fotos completas */
+    overflow: hidden;
+    background-color: #040b18;
+}
+
+/* Capa oscura reforzada para dar contraste */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(4, 11, 24, 0.45), rgba(4, 11, 24, 0.85));
+    z-index: 2;
+    pointer-events: none;
+}
+
+.equipaciones-carousel .carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ajuste total e inteligente de las imágenes verticales u horizontales */
+.equipaciones-carousel .carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 15%; /* Enfoca la cara y hombros evitando recortes feos */
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.equipaciones-carousel .carousel-slide.active {
+    display: flex;
+}
+
+/* CONTENEDOR DEL TEXTO FIJO MEJORADO (Estilo Cristal) */
+/* BUSCA ESTA CLASE Y REEMPLÁZALA COMPLETAMENTE */
+.hero-static-content {
+    position: absolute;
+    top: 55%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    max-width: 850px;
+    padding: 35px;
+    width: 90%;
+    box-sizing: border-box;
+    pointer-events: none;
+    
+    /* Quitamos el blur que pixelaba el fondo y dejamos un fondo limpio de alta definición */
+    background: rgba(4, 11, 24, 0.65); /* Un tono oscuro más denso que protege la lectura */
+    border-radius: 20px;
+    border: 1px dashed rgba(255, 255, 255, 0.15); /* Bordes más finos */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Le da profundidad real sin dañar la imagen */
+}
+
+/* El texto superior nuevo */
+.hero-pretitle {
+    color: #edbb00; /* Dorado oficial */
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    display: block;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero-badge {
+    background: #a50044;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+}
+
+/* TÍTULO CON DEGRADADO SALVAJE */
+.hero-static-content h2 {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.hero-static-content h2 .highlight-text {
+    background: linear-gradient(135deg, #ff2f76 0%, #a50044 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block; 
+    font-size: 65px;
+    font-weight: 950;
+    margin-top: 5px;
+}
+
+.hero-static-content p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Botones de navegación del carrusel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 15;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: #a50044;
+}
+
+.prev-btn { left: 25px; }
+.next-btn { right: 25px; }
+
+/* Puntitos indicadores */
+.carousel-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 15;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #edbb00;
+    transform: scale(1.3);
+}
+
+/* =========================================
+   SECCIÓN TIENDA - COMPOSICIÓN FLEXBOX
+========================================= */
+.shop-container {
+    padding: 60px 4%;
+    background-color: #040b18;
+}
+
+.title-area {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-subtitle {
+    color: #edbb00;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-title {
+    color: white;
+    font-size: 36px;
+    font-weight: 900;
+    margin-top: 5px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* TARJETAS DE PRODUCTO MEJORADAS */
+/* BUSCA ESTA CLASE Y REEMPLÁZALA */
+.product-card {
+    background: #091324;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative; /* OBLIGATORIO: Mantiene los badges adentro de la tarjeta */
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+/* AJUSTE PARA LAS FOTOS DE LAS CAMISAS */
+.product-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain; /* Cambiamos 'cover' por 'contain' para que la camisa no se mutile en los bordes */
+    background: #ffffff; /* Fondo blanco limpio para los PNGs de las equipaciones */
+    padding: 15px; /* Espaciado interno para que respiren las mangas */
+    box-sizing: border-box;
+}
+
+/* BUSCA ESTA CLASE (Si no existe la agregás abajo) */
+.product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #a50044;
+    color: white;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 6px;
+    z-index: 5; /* Asegura que flote limpiamente sobre el fondo blanco */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}/* Forzar que todos los botones queden perfectamente alineados abajo */
+.product-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Rellena el espacio vertical sobrante */
+}
+
+.product-info h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* El truco mágico: margin-top auto los alinea al fondo horizontal */
+.price {
+    font-size: 26px;
+    font-weight: 800;
+    color: #edbb00;
+    margin-top: auto; 
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    background: #edbb00;
+    color: #040b18;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.btn-buy:hover {
+    background: #ffcc00;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+@media (max-width: 992px){
+
+    .equipaciones-carousel{
+        height: 75vh;
+    }
+
+    .hero-static-content h2{
+        font-size: 40px;
+    }
+
+    .hero-static-content h2 .highlight-text{
+        font-size: 52px;
+    }
+
+    .hero-static-content p{
+        font-size: 15px;
+    }
+
+    .products-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+@media (max-width: 768px){
+
+    .equipaciones-carousel{
+        height: 70vh;
+    }
+
+    .hero-static-content{
+        width: 95%;
+        padding: 25px;
+    }
+
+    .hero-pretitle{
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .hero-badge{
+        font-size: 10px;
+        padding: 5px 15px;
+    }
+
+    .hero-static-content h2{
+        font-size: 30px;
+        line-height: 1.1;
+    }
+
+    .hero-static-content h2 .highlight-text{
+        font-size: 40px;
+    }
+
+    .hero-static-content p{
+        font-size: 14px;
+    }
+
+    .carousel-btn{
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .prev-btn{
+        left: 10px;
+    }
+
+    .next-btn{
+        right: 10px;
+    }
+
+    .shop-container{
+        padding: 40px 15px;
+    }
+
+    .section-title{
+        font-size: 28px;
+    }
+
+    .products-grid{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product-card img{
+        height: 280px;
+    }
+
+    .product-info{
+        padding: 20px;
+    }
+
+    .product-info h3{
+        font-size: 18px;
+    }
+
+    .price{
+        font-size: 22px;
+    }
+
+}
+
+/* =========================================
+   CELULARES PEQUEÑOS
+========================================= */
+@media (max-width: 480px){
+
+    .equipaciones-carousel{
+        height: 65vh;
+    }
+
+    .hero-static-content{
+        padding: 18px;
+        border-radius: 15px;
+    }
+
+    .hero-pretitle{
+        font-size: 10px;
+    }
+
+    .hero-badge{
+        font-size: 9px;
+    }
+
+    .hero-static-content h2{
+        font-size: 24px;
+    }
+
+    .hero-static-content h2 .highlight-text{
+        font-size: 30px;
+    }
+
+    .hero-static-content p{
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .carousel-btn{
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .carousel-dots{
+        bottom: 15px;
+    }
+
+    .dot{
+        width: 8px;
+        height: 8px;
+    }
+
+    .section-subtitle{
+        font-size: 12px;
+    }
+
+    .section-title{
+        font-size: 24px;
+    }
+
+    .product-card img{
+        height: 240px;
+        padding: 10px;
+    }
+
+    .product-info{
+        padding: 15px;
+    }
+
+    .product-info h3{
+        font-size: 16px;
+    }
+
+    .description{
+        font-size: 13px;
+    }
+
+    .price{
+        font-size: 20px;
+    }
+
+    .btn-buy{
+        padding: 12px;
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,250 @@
+/* =========================================
+   IMPORTAR ESTILOS DE EQUIPACIONES
+========================================= */
+@import url('/equipaciones.css');
+
+/* =========================================
+   HERO OFERTAS
+========================================= */
+.ofertas-carousel {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    background: #040b18;
+    margin-top: 0;
+}
+
+.ofertas-carousel .carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.ofertas-carousel .carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.ofertas-carousel .carousel-slide.active {
+    display: flex;
+}
+
+/* Overlay más rojizo para diferenciar ofertas */
+.ofertas-carousel .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(4, 11, 24, 0.45), rgba(4, 11, 24, 0.92));
+    z-index: 2;
+}
+
+/* =========================================
+   TEXTO HERO
+========================================= */
+.ofertas-carousel .hero-static-content {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 90%;
+    max-width: 850px;
+    text-align: center;
+    padding: 35px;
+    background: rgba(4, 11, 24, 0.68);
+    border-radius: 22px;
+    border: 1px dashed rgba(255,255,255,0.15);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.55);
+}
+
+.ofertas-carousel .hero-pretitle {
+    color: #edbb00;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.ofertas-carousel .hero-badge {
+    background: linear-gradient(135deg, #ff2f76, #a50044);
+    color: white;
+    padding: 7px 22px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.ofertas-carousel .hero-static-content h2 {
+    color: white;
+    font-size: 55px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.ofertas-carousel .highlight-text {
+    display: block;
+    background: linear-gradient(135deg, #ff2f76 0%, #ff7a18 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 70px;
+    font-weight: 950;
+    margin-top: 6px;
+}
+
+.ofertas-carousel .hero-static-content p {
+    color: rgba(255,255,255,0.82);
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* =========================================
+   BOTONES Y DOTS CARRUSEL
+========================================= */
+.ofertas-carousel .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    cursor: pointer;
+    z-index: 20;
+    font-size: 18px;
+    transition: .3s ease;
+}
+
+.ofertas-carousel .carousel-btn:hover { background: #a50044; }
+.ofertas-carousel .prev-btn { left: 25px; }
+.ofertas-carousel .next-btn { right: 25px; }
+
+.ofertas-carousel .carousel-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 20;
+}
+
+.ofertas-carousel .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.ofertas-carousel .dot.active {
+    background: #edbb00;
+    transform: scale(1.3);
+}
+
+/* =========================================
+   GRID CORREGIDO (COMO EN EQUIPACIONES)
+========================================= */
+.products-grid {
+    display: grid;
+    /* ESTA LÍNEA ES LA MAGIA QUE ARREGLA TUS IMÁGENES GIGANTES */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   SOBRESCRIBIR ESTILOS DE BOTONES Y BADGES PARA OFERTAS
+========================================= */
+.product-card {
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.45);
+}
+
+.product-badge { background: #a50044; }
+.product-badge.special { background: #edbb00; color: #040b18; }
+.product-badge.limited { background: #ff5f1f; }
+
+.btn-buy {
+    background: linear-gradient(135deg, #edbb00, #ffcc00);
+}
+
+.btn-buy:hover {
+    transform: scale(1.03);
+    background: linear-gradient(135deg, #ffcc00, #ffe259);
+}
+
+/* =========================================
+   RESPONSIVE GLOBAL
+========================================= */
+
+@media (max-width: 768px){
+
+    .main-header{
+        height: auto !important;
+        padding: 15px !important;
+        justify-content: center !important;
+        text-align: center;
+    }
+
+    .logo-container{
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .logo-header{
+        width: 55px !important;
+    }
+
+    .header-title{
+        font-size: 18px !important;
+    }
+
+    .header-subtitle{
+        font-size: 10px !important;
+    }
+
+    nav.navbar{
+        width: 95% !important;
+        top: 145px !important;
+        height: auto !important;
+        padding: 10px 0 !important;
+    }
+
+    nav.navbar .nav-links{
+        flex-wrap: wrap !important;
+        gap: 15px !important;
+    }
+
+    nav.navbar .nav-links a{
+        font-size: 12px !important;
+    }
+
+    nav.navbar.scrolled{
+        width: 95% !important;
+        top: 10px !important;
+    }
+
+}

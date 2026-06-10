@@ -1,0 +1,290 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body.login-page,
+body.registro-page{
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://images.pexels.com/photos/10287249/pexels-photo-10287249.jpeg');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow-x:hidden;
+}
+
+.auth-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px 15px;
+}
+
+.auth-card{
+    width:100%;
+    max-width:430px;
+
+    padding:38px 35px;
+
+    border-radius:32px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.45);
+
+    text-align:center;
+}
+
+.auth-logo{
+    width:95px;
+    margin-bottom:15px;
+
+    filter:drop-shadow(0 0 12px rgba(237,187,0,.6));
+}
+
+.auth-card h1{
+    font-size:52px;
+    font-weight:900;
+
+    margin-bottom:10px;
+
+    color:#edbb00;
+}
+
+.auth-subtitle{
+    color:#f2f2f2;
+    font-size:17px;
+    margin-bottom:28px;
+}
+
+.input-box{
+    position:relative;
+    margin-bottom:18px;
+}
+
+.input-box input{
+    width:100%;
+    height:65px;
+
+    border:none;
+    outline:none;
+
+    border-radius:18px;
+
+    padding:0 55px 0 20px;
+
+    background:rgba(255,255,255,.88);
+
+    color:#111;
+
+    font-size:17px;
+}
+
+.input-box input::placeholder{
+    color:#666;
+}
+
+.input-box input:focus{
+    box-shadow:
+    0 0 0 3px rgba(237,187,0,.20);
+}
+
+.toggle-password{
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    color:#64748b;
+    font-size:16px;
+    z-index:10;
+    transition:.3s;
+}
+
+.toggle-password:hover{
+    color:#edbb00;
+}
+
+.auth-btn{
+    width:100%;
+    height:64px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#edbb00;
+
+    color:#00122e;
+
+    font-size:20px;
+    font-weight:800;
+
+    cursor:pointer;
+
+    margin-top:5px;
+
+    transition:.3s;
+}
+
+.auth-btn:hover{
+    background:#ffd43b;
+    transform:translateY(-2px);
+}
+
+.auth-footer{
+    margin-top:22px;
+}
+
+.auth-footer a{
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.auth-footer a:hover{
+    color:#edbb00;
+}
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+@media (max-width: 768px){
+
+    .auth-card{
+        max-width: 90%;
+        padding: 30px 25px;
+    }
+
+    .auth-logo{
+        width: 80px;
+    }
+
+    .auth-card h1{
+        font-size: 42px;
+    }
+
+    .auth-subtitle{
+        font-size: 15px;
+    }
+
+    .input-box input{
+        height: 58px;
+        font-size: 16px;
+    }
+
+    .auth-btn{
+        height: 58px;
+        font-size: 18px;
+    }
+
+}
+
+/* =========================================
+   RESPONSIVE CELULAR
+========================================= */
+@media (max-width: 480px){
+
+    .auth-container{
+        padding: 15px;
+    }
+
+    .auth-card{
+        max-width: 100%;
+        padding: 25px 20px;
+        border-radius: 24px;
+    }
+
+    .auth-logo{
+        width: 70px;
+        margin-bottom: 10px;
+    }
+
+    .auth-card h1{
+        font-size: 34px;
+        margin-bottom: 8px;
+    }
+
+    .auth-subtitle{
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .input-box{
+        margin-bottom: 15px;
+    }
+
+    .input-box input{
+        height: 52px;
+        font-size: 15px;
+        padding: 0 45px 0 15px;
+    }
+
+    .toggle-password{
+        right: 14px;
+        font-size: 14px;
+    }
+
+    .auth-btn{
+        height: 54px;
+        font-size: 17px;
+    }
+
+    .auth-footer a{
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================
+   CELULARES MUY PEQUEÑOS
+========================================= */
+@media (max-width: 360px){
+
+    .auth-card{
+        padding: 20px 15px;
+    }
+
+    .auth-logo{
+        width: 60px;
+    }
+
+    .auth-card h1{
+        font-size: 28px;
+    }
+
+    .auth-subtitle{
+        font-size: 13px;
+    }
+
+    .input-box input{
+        height: 48px;
+        font-size: 14px;
+    }
+
+    .auth-btn{
+        height: 50px;
+        font-size: 16px;
+    }
+
+}

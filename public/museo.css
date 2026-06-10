@@ -1,0 +1,426 @@
+
+/* =========================================
+   HERO
+========================================= */
+
+.museum-hero{
+    position: relative;
+    min-height: 90vh;
+
+    background:
+    linear-gradient(rgba(4,11,24,.75), rgba(4,11,24,.9)),
+    url('https://wallpapers.com/images/featured/camp-nou-pictures-f2d8x5f84c7f8q6x.jpg');
+
+    background-size: cover;
+    background-position: center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:180px 20px 40px;
+}
+
+.museum-content{
+    max-width:900px;
+    margin-top:120px;
+}
+
+.museum-mini{
+    color:#edbb00;
+    letter-spacing:5px;
+    font-size:14px;
+    font-weight:800;
+}
+
+.museum-content h2{
+    font-size:90px;
+    color:white;
+    font-weight:900;
+    line-height:1.1;
+    margin:20px 0;
+}
+
+.museum-content h2 span{
+    background:linear-gradient(135deg,#ff005c,#a50044);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.museum-content p{
+    color:rgba(255,255,255,.8);
+    font-size:21px;
+    line-height:1.8;
+}
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.history-section,
+.trophies-section,
+.legends-section{
+    padding:100px 5%;
+    background:#040b18;
+}
+
+.section-title-area{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-mini{
+    color:#edbb00;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+.section-title{
+    color:white;
+    font-size:46px;
+    font-weight:900;
+    margin-top:10px;
+}
+
+/* =========================================
+   TIMELINE PREMIUM
+========================================= */
+
+.timeline{
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:0;
+    width:4px;
+    height:100%;
+    background:linear-gradient(#edbb00,#a50044);
+    transform:translateX(-50%);
+}
+
+.timeline-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    margin-bottom:80px;
+    position:relative;
+}
+
+.timeline-item:nth-child(odd){
+    flex-direction:row;
+}
+
+.timeline-item:nth-child(even){
+    flex-direction:row-reverse;
+}
+
+.timeline-item::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:20px;
+    height:20px;
+    background:#edbb00;
+    border:4px solid #040b18;
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    z-index:10;
+}
+
+.timeline-item img{
+    width:320px;
+    height:220px;
+    object-fit:cover;
+    border-radius:18px;
+    border:4px solid #edbb00;
+    box-shadow:0 15px 30px rgba(0,0,0,.4);
+    transition:.4s;
+}
+
+.timeline-item img:hover{
+    transform:scale(1.05);
+}
+
+.timeline-content{
+    width:calc(50% - 60px);
+    background:#091324;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.timeline-content h3{
+    color:#edbb00;
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.timeline-content p{
+    color:rgba(255,255,255,.75);
+    line-height:1.8;
+}
+
+/* =========================================
+   PALMARÉS PREMIUM
+========================================= */
+
+.trophies-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.trophy-card{
+    background:linear-gradient(
+        145deg,
+        #091324,
+        #12203a
+    );
+
+    border-radius:24px;
+    padding:40px;
+    text-align:center;
+    border:1px solid rgba(237,187,0,.15);
+
+    transition:.4s;
+    overflow:hidden;
+    position:relative;
+}
+
+.trophy-card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.05),
+        transparent
+    );
+
+    transform:translateX(-100%);
+    transition:.8s;
+}
+
+.trophy-card:hover::before{
+    transform:translateX(100%);
+}
+
+.trophy-card:hover{
+    transform:translateY(-12px);
+    border-color:#edbb00;
+    box-shadow:0 20px 35px rgba(237,187,0,.15);
+}
+
+.trophy-card i{
+    font-size:70px;
+    color:#edbb00;
+    margin-bottom:20px;
+    display:block;
+}
+
+.trophy-card h3{
+    color:white;
+    font-size:28px;
+}
+
+.trophy-number{
+    display:block;
+    color:#edbb00;
+    font-size:60px;
+    font-weight:900;
+    margin:15px 0;
+}
+
+/* =========================================
+   LEYENDAS
+========================================= */
+
+.legends-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.legend-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    height:500px;
+}
+
+.legend-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.legend-card:hover img{
+    transform:scale(1.1);
+}
+
+.legend-overlay{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:35px;
+    background:linear-gradient(
+        to top,
+        rgba(4,11,24,.95),
+        transparent
+    );
+}
+
+.legend-overlay h3{
+    color:white;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.legend-overlay p{
+    color:rgba(255,255,255,.8);
+    font-size:15px;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media(max-width:992px){
+
+    .museum-content h2{
+        font-size:65px;
+    }
+
+    .museum-content p{
+        font-size:18px;
+    }
+
+    .section-title{
+        font-size:38px;
+    }
+
+    .timeline-item img{
+        width:260px;
+        height:190px;
+    }
+
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media(max-width:768px){
+
+    .museum-hero{
+        min-height:70vh;
+    }
+
+    .museum-mini{
+        font-size:11px;
+        letter-spacing:2px;
+    }
+
+    .museum-content h2{
+        font-size:42px;
+    }
+
+    .museum-content p{
+        font-size:15px;
+    }
+
+    .history-section,
+    .trophies-section,
+    .legends-section{
+        padding:70px 20px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+    .timeline::before{
+        left:20px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even){
+        flex-direction:column;
+        align-items:flex-start;
+        padding-left:50px;
+        gap:20px;
+    }
+
+    .timeline-item::before{
+        left:20px;
+    }
+
+    .timeline-item img{
+        width:100%;
+        height:220px;
+    }
+
+    .timeline-content{
+        width:100%;
+    }
+
+    .timeline-content h3{
+        font-size:32px;
+    }
+
+    .trophies-grid,
+    .legends-grid{
+        grid-template-columns:1fr;
+    }
+
+    .legend-card{
+        height:380px;
+    }
+}
+
+/* =========================================
+   CELULARES PEQUEÑOS
+========================================= */
+
+@media(max-width:480px){
+
+    .museum-content h2{
+        font-size:32px;
+    }
+
+    .museum-content p{
+        font-size:13px;
+    }
+
+    .section-title{
+        font-size:24px;
+    }
+
+    .timeline-content h3{
+        font-size:24px;
+    }
+
+    .trophy-number{
+        font-size:42px;
+    }
+
+    .legend-card{
+        height:300px;
+    }
+}
