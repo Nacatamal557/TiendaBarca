@@ -105,10 +105,8 @@ function initHeroCarousel() {
 
     }, 5000);
 }
-
-// =========================================
 // NAVBAR EFFECT
-// =========================================
+
 function initNavbarScroll() {
 
     const navbar = document.querySelector('.navbar');
@@ -125,9 +123,9 @@ function initNavbarScroll() {
     });
 }
 
-// =========================================
+
 // FADE IN EFFECT
-// =========================================
+
 function initFadeIn() {
 
     const elements = document.querySelectorAll('.fade-in');
@@ -157,9 +155,9 @@ function initFadeIn() {
     });
 }
 
-// =========================================
+
 // INIT
-// =========================================
+
 document.addEventListener('DOMContentLoaded', () => {
 
     initHeroCarousel();

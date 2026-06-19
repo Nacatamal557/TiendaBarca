@@ -1,6 +1,6 @@
-// =========================================
+
 // MOSTRAR / OCULTAR CONTRASEÑA
-// =========================================
+
 
 document.querySelectorAll(".toggle-password").forEach(button => {
 
@@ -32,9 +32,9 @@ document.querySelectorAll(".toggle-password").forEach(button => {
 
 });
 
-// =========================================
+
 // LOGIN
-// =========================================
+
 
 const loginForm = document.getElementById('loginForm');
 
@@ -60,9 +60,8 @@ if (loginForm) {
 
 }
 
-// =========================================
 // REGISTRO
-// =========================================
+
 
 const registerForm =
     document.getElementById('registerForm');

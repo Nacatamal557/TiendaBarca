@@ -23,7 +23,7 @@ db.connect((err) => {
     console.log('¡Conectado con éxito a MySQL Workbench!');
 });
 
-// =========================================
+
 // MIDDLEWARES
 // =========================================
 app.use(express.static(path.join(__dirname, 'public')));
@@ -113,9 +113,9 @@ app.post('/api/registrar', (req, res) => {
     });
 });
 
-// =========================================
+
 // LOGIN
-// =========================================
+
 app.post('/api/login', (req, res) => {
 
     const { email, password } = req.body;
@@ -160,9 +160,9 @@ app.post('/api/login', (req, res) => {
 
 });
   
-// =========================================
+
 // SERVIDOR
-// =========================================
+
 app.listen(3000, () => {
     console.log('Servidor corriendo en http://localhost:3000');
 });
